@@ -1,6 +1,6 @@
 import { bmiSegment, calculateBMI, calculateBMIMeter } from '@/lib';
 import { CheckOutlined, ClockCircleOutlined } from '@ant-design/icons';
-import { Card, Col, Divider, Row, Statistic, Timeline } from 'antd';
+import { Card, Col, Divider, Row, Space, Statistic, Tag, Timeline } from 'antd';
 import { type FC } from 'react';
 import { useIntl, useModel } from 'umi';
 
@@ -25,6 +25,7 @@ const BMIDisplay: FC = () => {
         imperialUnit: (data as BMIFormdata).unit === 'imperial',
       },
     );
+    console.log(meter);
 
     return (
       <>
@@ -58,8 +59,19 @@ const BMIDisplay: FC = () => {
             reverse
             mode="left"
             items={meter?.map(e => ({
-              label: intl.formatMessage({ id: `bmi.${e.level}` }),
-              children: `> ${e.mass} ${intl.formatMessage({
+              label: (
+                <Space>
+                  <span>
+                    {intl.formatMessage({
+                      id: `bmi.${e.level}`,
+                    })}
+                  </span>
+                  <Tag>{e.bmi.toFixed(2)}</Tag>
+                </Space>
+              ),
+              children: `${e.level === 'mass' ? ' ' : '>'} ${
+                e.mass
+              } ${intl.formatMessage({
                 id: `input.mass.${(data as BMIFormdata).unit}`,
               })}`,
               color: e.bmi >= bmi ? 'green' : 'gray',

@@ -8,3 +8,4 @@
 /dist
 .swc
 .eslintcache
+.DS_Store

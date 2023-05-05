@@ -1,7 +1,7 @@
 {
   "name": "bmi-meter",
   "description": "Yet another BMI calculator",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "private": false,
   "author": "Yan <i@yinyan.fr>",
   "scripts": {

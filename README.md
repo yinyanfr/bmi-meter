@@ -13,7 +13,7 @@ Yet another BMI calcultor
 - Shows a full tree of weights corresponding to all levels of BMIs
 - Supports both Metric and Imperial units
 - Supports different BMI standards
-- Supports EN/FR/JA/CHS languages
+- Supports multiple languages
 - PWA ready
 
 ### :framed_picture: Gallery

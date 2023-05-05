@@ -5,7 +5,7 @@ import styles from './index.less';
 
 const App: FC = () => {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.main}>
           <section>
@@ -19,7 +19,7 @@ const App: FC = () => {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

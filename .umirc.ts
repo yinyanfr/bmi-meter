@@ -96,12 +96,15 @@ export default defineConfig({
       href: '/icon-512x512.png',
     },
   ],
-  scripts: [
-    `
+  scripts:
+    process.env.NODE_ENV === 'production'
+      ? [
+          `
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js')
     }
-    `,
-  ],
+`,
+        ]
+      : undefined,
   copy: [{ from: 'src/assets/pwa', to: 'dist' }],
 });
